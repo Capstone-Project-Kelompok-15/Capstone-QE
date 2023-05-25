@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"products","As user, I can login and view all products","SUCCESS","2023-05-09T20:05:19.652+07:00[Asia/Jakarta]","0.0","32.89"
+"products","As user, I can login and view all products categories","SUCCESS","2023-05-09T20:05:52.972+07:00[Asia/Jakarta]","0.0","30.32"
+"products","As user, I can login and add products to my cart","SUCCESS","2023-05-09T20:07:49.332+07:00[Asia/Jakarta]","0.0","30.52"
