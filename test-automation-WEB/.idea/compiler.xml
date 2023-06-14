@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="test-automation-MinProWEB" />
+        <module name="test-automation-WEB" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="test-automation-WEB" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
