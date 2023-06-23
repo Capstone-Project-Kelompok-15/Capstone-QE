@@ -1,7 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Orders","POST As a user I can create a new order","SUCCESS","2023-05-11T17:11:23.2677081+07:00[Asia/Bangkok]","0.0","0.8"
-"Orders","POST As a user I can't create a new order","SUCCESS","2023-05-11T17:11:24.08058+07:00[Asia/Bangkok]","0.0","0.69"
-"Orders","GET As a user I can get all orders list","SUCCESS","2023-05-11T17:11:24.7780296+07:00[Asia/Bangkok]","0.0","0.45"
-"Orders","GET As a user I can't get all orders list","SUCCESS","2023-05-11T17:11:25.232678+07:00[Asia/Bangkok]","0.0","0.37"
-"Orders","GET As a user I can get order list by id","SUCCESS","2023-05-11T17:11:25.6066141+07:00[Asia/Bangkok]","0.0","0.32"
-"Orders","GET As a user I can't get order list by id","SUCCESS","2023-05-11T17:11:25.9395478+07:00[Asia/Bangkok]","0.0","0.57"

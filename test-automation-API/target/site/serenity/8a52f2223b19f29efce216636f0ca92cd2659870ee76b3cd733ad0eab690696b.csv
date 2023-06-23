@@ -1,7 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Products","GET As a user I can get all products","SUCCESS","2023-05-11T17:11:32.8745097+07:00[Asia/Bangkok]","0.0","7.02"
-"Products","GET As a user I can't get all products","SUCCESS","2023-05-11T17:11:39.9020011+07:00[Asia/Bangkok]","0.0","2.21"
-"Products","POST As a user I can't create new product","SUCCESS","2023-05-11T17:11:42.7790458+07:00[Asia/Bangkok]","0.0","3.68"
-"Products","GET As a user I can get product by id","SUCCESS","2023-05-11T17:11:46.4799901+07:00[Asia/Bangkok]","0.0","1.54"
-"Products","GET As admin I can get product ratings","SUCCESS","2023-05-11T17:11:50.2468344+07:00[Asia/Bangkok]","0.0","1.51"
-"Products","GET As a user I can't get product ratings","SUCCESS","2023-05-11T17:11:51.7686605+07:00[Asia/Bangkok]","0.0","1.02"
