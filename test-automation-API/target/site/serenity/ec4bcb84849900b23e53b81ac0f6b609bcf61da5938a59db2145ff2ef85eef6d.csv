@@ -1,3 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Hello","GET As a user I can get ""hello"" text","SUCCESS","2023-05-11T17:11:22.2998718+07:00[Asia/Bangkok]","0.0","0.28"
-"Hello","GET As a user I can't get ""hello"" text","SUCCESS","2023-05-11T17:11:22.5864052+07:00[Asia/Bangkok]","0.0","0.67"
