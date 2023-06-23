@@ -1,4 +1,4 @@
-package starter.authentication;
+package starter.users;
 
 import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
@@ -6,9 +6,7 @@ import net.thucydides.core.annotations.Step;
 import org.hamcrest.Matchers;
 import starter.BaseUrl;
 import starter.Token;
-
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DeleteUser {

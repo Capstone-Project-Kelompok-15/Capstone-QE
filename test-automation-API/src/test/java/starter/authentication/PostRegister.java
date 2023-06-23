@@ -73,6 +73,5 @@ public class PostRegister {
     @Step("I receive valid data for response code 400")
     public void validateDataInvalidForResponseCode400() {
         restAssuredThat(response -> response.body("$", notNullValue()));
-//        restAssuredThat(response -> response.body("message", Matchers.equalTo("Email already exists")));
     }
 }

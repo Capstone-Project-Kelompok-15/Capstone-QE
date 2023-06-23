@@ -7,9 +7,6 @@ import org.json.simple.JSONObject;
 import starter.BaseUrl;
 import starter.Token;
 
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.Matchers.notNullValue;
-
 public class PutThreads {
 
     public String createRandomTitle(){

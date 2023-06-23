@@ -1,12 +1,9 @@
-package starter.authentication;
+package starter.users;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.BaseUrl;
 import starter.Token;
-
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.Matchers.notNullValue;
 
 public class GetUserAll {
     @Step("I set GET api endpoints all users")

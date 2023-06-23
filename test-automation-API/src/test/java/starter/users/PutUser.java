@@ -1,4 +1,4 @@
-package starter.authentication;
+package starter.users;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
@@ -6,9 +6,7 @@ import org.hamcrest.Matchers;
 import org.json.simple.JSONObject;
 import starter.BaseUrl;
 import starter.Token;
-
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class PutUser {
@@ -21,9 +19,9 @@ public class PutUser {
     @Step("I send PUT HTTP request update user")
     public void sendPutHttpRequestUpdateUser() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("username", "nafal");
-        requestBody.put("email", "nafal@gmail.com");
-        requestBody.put("password", "nafal123");
+        requestBody.put("username", "adi");
+        requestBody.put("email", "adi@gmail.com");
+        requestBody.put("password", "adi123");
         requestBody.put("bio", "Pejuang Tangguh");
         requestBody.put("age", 12);
         requestBody.put("image_url", "");
@@ -38,9 +36,9 @@ public class PutUser {
     @Step("I send PUT HTTP request update user invalid")
     public void sendPutHttpRequestUpdateUserInvalid() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("username", "nafal");
-        requestBody.put("email", "nafal@gmail.com");
-        requestBody.put("password", "nafal123");
+        requestBody.put("username", "adi");
+        requestBody.put("email", "adi@gmail.com");
+        requestBody.put("password", "adi123");
         requestBody.put("bio", "Pejuang Tangguh");
         requestBody.put("age", 12);
         requestBody.put("image_url", "");
@@ -66,10 +64,10 @@ public class PutUser {
     public void sendPutHttpRequestUpdateUserByAdmin() {
         JSONObject requestBody = new JSONObject();
         requestBody.put("photo", "");
-        requestBody.put("username", "nafal");
-        requestBody.put("email", "nafal1@gmail.com");
-        requestBody.put("password", "nafal123");
-        requestBody.put("bio", "Pejuang Tangguh");
+        requestBody.put("username", "gilang");
+        requestBody.put("email", "gilang@gmail.com");
+        requestBody.put("password", "gilang123");
+        requestBody.put("bio", "Pejuang Kuat");
         requestBody.put("role", "user");
         SerenityRest.given()
                 .header("Content-Type", "application/json")
@@ -85,10 +83,10 @@ public class PutUser {
     public void sendPutHttpRequestUpdateUserInvalidByAdmin() {
         JSONObject requestBody = new JSONObject();
         requestBody.put("photo", "");
-        requestBody.put("username", "nafal");
-        requestBody.put("email", "nafal1@gmail.com");
-        requestBody.put("password", "nafal123");
-        requestBody.put("bio", "Pejuang Tangguh");
+        requestBody.put("username", "gilang");
+        requestBody.put("email", "gilang@gmail.com");
+        requestBody.put("password", "gilang123");
+        requestBody.put("bio", "Pejuang Kuat");
         requestBody.put("role", "user");
         SerenityRest.given()
                 .header("Content-Type", "application/json")

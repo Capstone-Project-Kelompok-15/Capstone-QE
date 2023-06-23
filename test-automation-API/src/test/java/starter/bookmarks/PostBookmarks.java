@@ -1,6 +1,5 @@
 package starter.bookmarks;
 
-import com.github.javafaker.Faker;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import org.json.simple.JSONObject;

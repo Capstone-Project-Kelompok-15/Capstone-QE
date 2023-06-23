@@ -3,13 +3,10 @@ package starter.authentication;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import org.hamcrest.Matchers;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import starter.BaseUrl;
-
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
 
 public class PostLogin {
 
@@ -66,12 +63,8 @@ public class PostLogin {
     public void sendPostHTTPRequestLoginUserInvalid() {
         JSONObject requestBody = new JSONObject();
         requestBody.put("email", "");
-        requestBody.put("password", "admin123");
+        requestBody.put("password", "nafal1233");
         SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
                 .post(setPostApiEndpointUser());
     }
-//    @Step("I receive valid data for response code 400 login user")
-//    public void validateDataInvalidForResponseCode400LoginUser() {
-//        restAssuredThat(response -> response.body("error", Matchers.equalTo("invalid username or password")));
-//    }
 }

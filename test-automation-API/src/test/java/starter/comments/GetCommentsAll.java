@@ -6,9 +6,6 @@ import net.thucydides.core.annotations.Step;
 import starter.BaseUrl;
 import starter.Token;
 
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class GetCommentsAll {
     @Step("I set GET api endpoints all comments")
     public String setApiEndpoints() {

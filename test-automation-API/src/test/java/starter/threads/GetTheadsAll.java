@@ -1,6 +1,5 @@
 package starter.threads;
 
-import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.BaseUrl;
@@ -8,7 +7,6 @@ import starter.Token;
 
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GetTheadsAll{
     @Step("I set GET api endpoints all threads")

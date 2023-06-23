@@ -5,9 +5,6 @@ import net.thucydides.core.annotations.Step;
 import starter.BaseUrl;
 import starter.Token;
 
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.Matchers.equalTo;
-
 public class GetThreadsId {
     @Step("I set GET api endpoints thread by id")
     public String setApiEndpointsById() {

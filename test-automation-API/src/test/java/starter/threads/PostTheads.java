@@ -3,14 +3,9 @@ package starter.threads;
 import com.github.javafaker.Faker;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import starter.BaseUrl;
 import starter.Token;
-
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
 
 public class PostTheads {
 

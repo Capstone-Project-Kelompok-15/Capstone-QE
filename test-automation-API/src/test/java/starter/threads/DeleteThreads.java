@@ -1,15 +1,9 @@
 package starter.threads;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.BaseUrl;
 import starter.Token;
-
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.Matchers.equalTo;
 
 public class DeleteThreads {
     @Step("I set DELETE api endpoints delete thread")
