@@ -19,7 +19,7 @@ public class GetCommentsId {
 
     @Step("I set GET api endpoints comment by id invalid")
     public String setApiEndpointsInvalid() {
-        return BaseUrl.url + "comment/111212";
+        return BaseUrl.url + "comment/";
     }
     @Step("I send GET HTTP request comment by id invalid")
     public void sendGetHttpRequestInvalid() {

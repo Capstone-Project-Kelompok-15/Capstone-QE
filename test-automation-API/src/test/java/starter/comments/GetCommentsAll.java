@@ -1,6 +1,5 @@
 package starter.comments;
 
-import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.BaseUrl;

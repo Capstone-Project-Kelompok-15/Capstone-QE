@@ -5,6 +5,7 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import org.json.simple.JSONObject;
 import starter.BaseUrl;
+import starter.Data;
 import starter.Token;
 
 public class PutThreads {
@@ -25,7 +26,7 @@ public class PutThreads {
     }
     @Step("I set PUT api endpoints update thread")
     public String setPutApiEndpointsUpdateThread() {
-        return BaseUrl.url + "threads/11";
+        return BaseUrl.url + "threads/" + Data.updatethread1;
     }
     @Step("I send PUT HTTP request update thread")
     public void sendPutHttpRequestUpdateThread() {
@@ -34,7 +35,7 @@ public class PutThreads {
         requestBody.put("topic", createRandomTopic());
         requestBody.put("content", createRandomContent());
         requestBody.put("file", "");
-        requestBody.put("user_id", 3);
+        requestBody.put("user_id", 1);
         SerenityRest.given()
                 .header("Content-Type", "application/json")
                 .header("Authorization", Token.user)
@@ -45,7 +46,7 @@ public class PutThreads {
 
     @Step("I set PUT api endpoints update thread invalid")
     public String setPutApiEndpointsUpdateThreadInvalid() {
-        return BaseUrl.url + "threads/1";
+        return BaseUrl.url + "threads/999";
     }
     @Step("I send PUT HTTP request update thread invalid")
     public void sendPutHttpRequestUpdateThreadInvalid() {
@@ -78,6 +79,19 @@ public class PutThreads {
         SerenityRest.given()
                 .header("Content-Type", "application/json")
                 .header("Authorization", Token.admin)
+                .body(requestBody.toJSONString())
+                .put(setPutApiEndpointsUpdateThreadByAdmin());
+    }
+    @Step("I send PUT HTTP request update thread invalid by admin")
+    public void sendPutHttpRequestUpdateThreadInvalidByAdmin() {
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("title", createRandomTitle());
+        requestBody.put("topic", createRandomTopic());
+        requestBody.put("content", createRandomContent());
+        requestBody.put("file", "");
+        requestBody.put("user_id", 1);
+        SerenityRest.given()
+                .header("Content-Type", "application/json")
                 .body(requestBody.toJSONString())
                 .put(setPutApiEndpointsUpdateThreadByAdmin());
     }

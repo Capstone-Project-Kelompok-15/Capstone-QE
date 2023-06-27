@@ -3,12 +3,13 @@ package starter.comments;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.BaseUrl;
+import starter.Data;
 import starter.Token;
 
 public class DeleteComments {
     @Step("I set DELETE api endpoints delete comment")
     public String setDeleteApiEndpoints(){
-        return BaseUrl.url + "comment/14";
+        return BaseUrl.url + "comment/" + Data.deletecomment;
     }
     @Step("I send DELETE HTTP request delete comment")
     public void sendDeleteHttpRequest(){

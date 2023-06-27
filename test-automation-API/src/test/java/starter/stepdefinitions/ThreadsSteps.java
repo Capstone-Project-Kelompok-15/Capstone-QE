@@ -23,6 +23,12 @@ public class ThreadsSteps {
     @Steps
     DeleteThreads Delete;
     @Steps
+    PostLikes Like;
+    @Steps
+    GetLikesId GetLike;
+    @Steps
+    DeleteLikes Unlike;
+    @Steps
     PostFollow Follow;
     @Steps
     DeleteUnfollow Unfollow;
@@ -177,6 +183,10 @@ public class ThreadsSteps {
     public void sendPutHttpRequestUpdateThreadByAdmin(){
         Update.sendPutHttpRequestUpdateThreadByAdmin();
     }
+    @When("I send PUT HTTP request update thread invalid by admin")
+    public void sendPutHttpRequestUpdateThreadInvalidByAdmin(){
+        Update.sendPutHttpRequestUpdateThreadInvalidByAdmin();
+    }
 
 
     //Delete a thread
@@ -206,6 +216,66 @@ public class ThreadsSteps {
     @When("I send DELETE HTTP request delete thread by admin")
     public void sendDeleteApiEndpointsByAdmin(){
         Delete.sendDeleteHttpRequestByAdmin();
+    }
+
+
+    //Create like
+    @Given("I set POST api endpoints new like")
+    public void setPostApiEndpointsNewLike(){
+        Like.setPostApiEndpoints();
+    }
+    @When("I send POST HTTP request new like")
+    public void sendPostHttpRequestNewLike(){
+        Like.sendPostHTTPRequest();
+    }
+
+    @Given("I set POST api endpoints new like invalid")
+    public void setPostApiEndpointsNewLikeInvalid(){
+        Like.setPostApiEndpointInvalid();
+    }
+    @When("I send POST HTTP request new like invalid")
+    public void sendPostHttpRequestNewLikeInvalid(){
+        Like.sendPostHTTPRequestInvalid();
+    }
+
+
+    //Get like by id
+    @Given("I set GET api endpoints like by id")
+    public void setGetApiEndpointsLikeById() {
+        GetLike.setApiEndpointsById();
+    }
+    @When("I send GET HTTP request like by id")
+    public void sendGetHttpRequestLikeById(){
+        GetLike.sendGetHttpRequest();
+    }
+
+    @Given("I set GET api endpoints like by id invalid")
+    public void setGetApiEndpointsLikeByIdInvalid() {
+        GetLike.setApiEndpointsInvalid();
+    }
+    @When("I send GET HTTP request like by id invalid")
+    public void sendGetHttpRequestLikeByIdInvalid(){
+        GetLike.sendGetHttpRequestInvalid();
+    }
+
+
+    //Delete a like
+    @Given("I set DELETE api endpoints delete like")
+    public void setDeleteApiEndpointsLike(){
+        Unlike.setDeleteApiEndpoints();
+    }
+    @When("I send DELETE HTTP request delete like")
+    public void sendDeleteApiEndpointsLike(){
+        Unlike.sendDeleteHttpRequest();
+    }
+
+    @Given("I set DELETE api endpoints delete like invalid")
+    public void setDeleteApiEndpointsInvalidLike(){
+        Unlike.setDeleteApiEndpointsInvalid();
+    }
+    @When("I send DELETE HTTP request delete like invalid")
+    public void sendDeleteApiEndpointsInvalidLike(){
+        Unlike.sendDeleteHttpRequestInvalid();
     }
 
 

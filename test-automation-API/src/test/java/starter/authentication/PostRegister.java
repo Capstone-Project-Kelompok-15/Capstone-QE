@@ -16,9 +16,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PostRegister {
     public String password = "password";
 
-    public String createRandomName(){
+    public String createRandomUsername(){
         Faker faker = new Faker();
         return faker.name().firstName();
+    }
+
+    public String createRandomEmail(){
+        Faker faker = new Faker();
+        return faker.internet().emailAddress();
+    }
+
+    public String createRandomBio(){
+        Faker faker = new Faker();
+        return faker.job().position();
     }
 
     public int createRandomAge(){
@@ -33,10 +43,15 @@ public class PostRegister {
     @Step("I send POST HTTP request register")
     public void sendPostHTTPRequest() {
         JSONObject requestBody = new JSONObject();
+
+        requestBody.put("username", createRandomUsername());
+        requestBody.put("email", createRandomEmail());
+
         requestBody.put("username", createRandomName());
         requestBody.put("email", createRandomName() + "@gmail.com");
+
         requestBody.put("password", password);
-        requestBody.put("bio", "Penulis Buku");
+        requestBody.put("bio", createRandomBio());
         requestBody.put("age", createRandomAge());
         requestBody.put("image_url", "");
         requestBody.put("role", "user");
@@ -56,10 +71,10 @@ public class PostRegister {
     @Step("I send POST HTTP request register invalid")
     public void sendPostHTTPRequestInvalid() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("username", createRandomName());
-        requestBody.put("email", "nafal2@gmail.com");
+        requestBody.put("username", createRandomUsername());
+        requestBody.put("email", "nafal@gmail.com");
         requestBody.put("password", password);
-        requestBody.put("bio", "Penulis Buku");
+        requestBody.put("bio", createRandomBio());
         requestBody.put("age", createRandomAge());
         requestBody.put("image_url", "");
         requestBody.put("role", "user");

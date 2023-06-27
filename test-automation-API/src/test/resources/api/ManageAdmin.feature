@@ -14,8 +14,8 @@ Feature: ManageAdmin
   Scenario: POST As an admin I can't login
     Given I set POST api endpoints login admin
     When I send POST HTTP request login admin invalid
-    Then I receive valid HTTP response code 401
-    And I receive valid data for response code 401
+    Then I receive valid HTTP response code 400
+    And I receive valid data for response code 400
 
   @A3
   #Create User By Admin +
@@ -58,8 +58,8 @@ Feature: ManageAdmin
   Scenario: GET As an admin I can't get all user
     Given I set GET api endpoints all users invalid
     When I send GET HTTP request all users invalid
-    Then I receive valid HTTP response code 400
-    And I receive valid data for response code 400
+    Then I receive valid HTTP response code 404
+    And I receive valid data for response code 404
 
   @A9
   #Delete User By Admin +

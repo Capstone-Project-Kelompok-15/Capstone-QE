@@ -3,12 +3,13 @@ package starter.threads;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.BaseUrl;
+import starter.Data;
 import starter.Token;
 
 public class DeleteUnfollow {
     @Step("I set POST api endpoints unfollow thread")
     public String setDeleteApiEndpoints(){
-        return BaseUrl.url + "follow/11";
+        return BaseUrl.url + "follow/" + Data.deleteunfollow;
     }
     @Step("I send POST HTTP request unfollow thread")
     public void sendDeleteHttpRequest(){
