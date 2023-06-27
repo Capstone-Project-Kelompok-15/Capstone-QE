@@ -1,5 +1,6 @@
 package starter.users;
 
+
 import com.github.javafaker.Faker;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
@@ -7,11 +8,13 @@ import org.json.simple.JSONObject;
 import starter.BaseUrl;
 import starter.Data;
 import starter.Token;
+import org.hamcrest.Matchers;
 
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class PutUser {
+
     public String createRandomUsername(){
         Faker faker = new Faker();
         return faker.name().firstName();
@@ -25,6 +28,7 @@ public class PutUser {
         return faker.job().position();
     }
 
+
     //Update user
     @Step("I set PUT api endpoints update user")
     public String setPutApiEndpointsUpdateUser() {
@@ -33,6 +37,7 @@ public class PutUser {
     @Step("I send PUT HTTP request update user")
     public void sendPutHttpRequestUpdateUser() {
         JSONObject requestBody = new JSONObject();
+
         requestBody.put("username", createRandomUsername());
         requestBody.put("email", createRandomUsername() + "@gmail.com");
         requestBody.put("password", "password");
@@ -91,7 +96,9 @@ public class PutUser {
     }
     @Step("I set PUT api endpoints update user invalid by admin")
     public String setPutApiEndpointsUpdateUserInvalidByAdmin() {
-        return BaseUrl.url + "admin/999";
+
+        return BaseUrl.url + "admin/1";
+
     }
     @Step("I send PUT HTTP request update user invalid by admin")
     public void sendPutHttpRequestUpdateUserInvalidByAdmin() {

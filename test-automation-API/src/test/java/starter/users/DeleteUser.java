@@ -5,6 +5,7 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import org.hamcrest.Matchers;
 import starter.BaseUrl;
+
 import starter.Data;
 import starter.Token;
 
@@ -50,7 +51,11 @@ public class DeleteUser {
     //Delete user by admin
     @Step("I set DELETE api endpoints delete user by admin")
     public String setDeleteApiEndpointsByAdmin(){
+
         return BaseUrl.url + "admin/" + Data.deleteuser2;
+
+        return BaseUrl.url + "admin/12";
+
     }
     @Step("I send DELETE HTTP request delete user by admin")
     public void sendDeleteHttpRequestByAdmin(){

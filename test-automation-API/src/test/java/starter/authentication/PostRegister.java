@@ -43,8 +43,13 @@ public class PostRegister {
     @Step("I send POST HTTP request register")
     public void sendPostHTTPRequest() {
         JSONObject requestBody = new JSONObject();
+
         requestBody.put("username", createRandomUsername());
         requestBody.put("email", createRandomEmail());
+
+        requestBody.put("username", createRandomName());
+        requestBody.put("email", createRandomName() + "@gmail.com");
+
         requestBody.put("password", password);
         requestBody.put("bio", createRandomBio());
         requestBody.put("age", createRandomAge());
