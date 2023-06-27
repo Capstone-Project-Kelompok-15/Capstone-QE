@@ -14,18 +14,18 @@ public class PutComments {
     }
     @Step("I set PUT api endpoints update comment")
     public String setPutApiEndpointsUpdateComment() {
-        return BaseUrl.url + "comment/6";
+        return BaseUrl.url + "comment/1";
     }
     @Step("I send PUT HTTP request update comment")
     public void sendPutHttpRequestUpdateComment() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("thread_id", 11);
+        requestBody.put("thread_id", 1);
         requestBody.put("comment", createRandomContent());
         SerenityRest.given()
                 .header("Content-Type", "application/json")
                 .header("Authorization", Token.user)
                 .body(requestBody.toJSONString())
-                .post(setPutApiEndpointsUpdateComment());
+                .put(setPutApiEndpointsUpdateComment());
     }
 
 
@@ -36,12 +36,12 @@ public class PutComments {
     @Step("I send PUT HTTP request update comment invalid")
     public void sendPutHttpRequestUpdateCommentInvalid() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("thread_id", 1);
+        requestBody.put("thread_id", 100000000);
         requestBody.put("comment", createRandomContent());
         SerenityRest.given()
                 .header("Content-Type", "application/json")
                 .header("Authorization", Token.user)
                 .body(requestBody.toJSONString())
-                .post(setPutApiEndpointsUpdateCommentInvalid());
+                .put(setPutApiEndpointsUpdateCommentInvalid());
     }
 }

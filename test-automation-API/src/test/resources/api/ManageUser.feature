@@ -34,27 +34,42 @@ Feature: ManageUser
 
   @U5
   #Update User +
-  Scenario: PUT As an admin I can update user data
+  Scenario: PUT As a user I can update user data
     Given I set PUT api endpoints update user
     When I send PUT HTTP request update user
     Then I receive valid HTTP response code 200
     And I receive valid data for response code 200
   @U6
   #Update User -
-  Scenario: PUT As an admin I can't update user data
+  Scenario: PUT As a user I can't update user data
     Given I set PUT api endpoints update user
     When I send PUT HTTP request update user invalid
     Then I receive valid HTTP response code 400
     And I receive valid data for response code 400
 
   @U7
+  #Get All User +
+  Scenario: GET As a user I can get all users
+    Given I set GET api endpoints all users
+    When I send GET HTTP request all users
+    Then I receive valid HTTP response code 200
+    And I receive valid data for response code 200
+  @U8
+  #Get All User -
+  Scenario: GET As a user I can't get all users
+    Given I set GET api endpoints all users invalid
+    When I send GET HTTP request all users invalid
+    Then I receive valid HTTP response code 404
+    And I receive valid data for response code 404
+
+  @U9
   #Get Detail User +
   Scenario: GET As an admin I can get detail user
     Given I set GET api endpoints user
     When I send GET HTTP request user
     Then I receive valid HTTP response code 200
     And I receive valid data for response code 200
-  @U8
+  @U10
   #Get Detail User -
   Scenario: GET As an admin I can't get detail user
     Given I set GET api endpoints user
@@ -62,14 +77,14 @@ Feature: ManageUser
     Then I receive valid HTTP response code 400
     And I receive valid data for response code 400
 
-  @U9
+  @U11
   #Delete User +
   Scenario: DELETE As a user I can delete user
     Given I set DELETE api endpoints delete user
     When I send DELETE HTTP request delete user
     Then I receive valid HTTP response code 200
     And I receive valid data for delete user
-  @U10
+  @U12
   #Delete User -
   Scenario: DELETE As a user I can't delete user
     Given I set DELETE api endpoints delete user invalid

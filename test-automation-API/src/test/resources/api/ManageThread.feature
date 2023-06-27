@@ -209,8 +209,8 @@ Feature: ManageThread
   Scenario: PUT As a user I can't update comment
     Given I set PUT api endpoints update comment invalid
     When I send PUT HTTP request update comment invalid
-    Then I receive valid HTTP response code 500
-    And I receive valid data for response code 500
+    Then I receive valid HTTP response code 404
+    And I receive valid data for response code 404
 
   @T29
   #Delete Comment By ID +
@@ -258,17 +258,47 @@ Feature: ManageThread
     And I receive valid data for response code 404
 
   @T35
-  #Get All User +
-  Scenario: GET As a user I can get all users
-    Given I set GET api endpoints all users
-    When I send GET HTTP request all users
+  #Create Like +
+  Scenario: POST As a user I can create a new like
+    Given I set POST api endpoints new like
+    When I send POST HTTP request new like
     Then I receive valid HTTP response code 200
     And I receive valid data for response code 200
   @T36
-  #Get All User -
-  Scenario: GET As a user I can't get all users
-    Given I set GET api endpoints all users invalid
-    When I send GET HTTP request all users invalid
+  #Create Like -
+  Scenario: POST As a user I can't create new like
+    Given I set POST api endpoints new like invalid
+    When I send POST HTTP request new like invalid
+    Then I receive valid HTTP response code 404
+    And I receive valid data for response code 404
+
+#  @T37
+#  #Get Like By ID +
+#  Scenario: GET As a user I can get like by id
+#    Given I set GET api endpoints like by id
+#    When I send GET HTTP request like by id
+#    Then I receive valid HTTP response code 200
+#    And I receive valid data for response code 200
+#  @T38
+#  #Get Like By ID -
+#  Scenario: GET As a user I can't get like by id
+#    Given I set GET api endpoints like by id invalid
+#    When I send GET HTTP request like by id invalid
+#    Then I receive valid HTTP response code 404
+#    And I receive valid data for response code 404
+
+  @T39
+  #Delete Like By ID +
+  Scenario: DELETE As a user I can delete like by id
+    Given I set DELETE api endpoints delete like
+    When I send DELETE HTTP request delete like
+    Then I receive valid HTTP response code 200
+    And I receive valid data for response code 200
+  @T40
+  #Delete Like By ID -
+  Scenario: DELETE As a user I can't delete like by id
+    Given I set DELETE api endpoints delete like invalid
+    When I send DELETE HTTP request delete like invalid
     Then I receive valid HTTP response code 404
     And I receive valid data for response code 404
 
@@ -285,14 +315,14 @@ Feature: ManageThread
 #    Then I receive valid HTTP response code 404
 #    And I receive valid data for response code 404
 
-  @T37
+  @T41
   #Get All Threads +
   Scenario: GET As an admin I can get all threads
     Given I set GET api endpoints all threads by admin
     When I send GET HTTP request all threads by admin
     Then I receive valid HTTP response code 200
     And I receive valid data for response code 200
-  @T38
+  @T42
   #Get All Threads -
   Scenario: GET As an user I can't get all threads
     Given I set GET api endpoints all threads by admin
@@ -300,14 +330,14 @@ Feature: ManageThread
     Then I receive valid HTTP response code 400
     And I receive valid data for response code 400
 
-  @T39
+  @T43
   #Get Thread By Title +
   Scenario: GET As an admin I can get thread by title
     Given I set GET api endpoints thread by title
     When I send GET HTTP request thread by title
     Then I receive valid HTTP response code 200
     And I receive valid data for response code 200
-  @T40
+  @T44
   #Get Thread By Title -
   Scenario: GET As an admin I can't get thread by title
     Given I set GET api endpoints thread by title invalid
@@ -315,14 +345,14 @@ Feature: ManageThread
     Then I receive valid HTTP response code 404
     And I receive valid data for response code 404
 
-  @T41
+  @T45
   #Get Threads By Topic +
   Scenario: GET As an user I can get thread by topic
     Given I set GET api endpoints thread by topic
     When I send GET HTTP request thread by topic
     Then I receive valid HTTP response code 200
     And I receive valid data for response code 200
-  @T42
+  @T46
   #Get Threads By Topic -
   Scenario: GET As an user I can't get thread by topic
     Given I set GET api endpoints thread by topic invalid
@@ -330,29 +360,29 @@ Feature: ManageThread
     Then I receive valid HTTP response code 404
     And I receive valid data for response code 404
 
-  @T43
+  @T47
   #Update Thread By Admin +
   Scenario: PUT As an admin I can update thread
     Given I set PUT api endpoints update thread by admin
     When I send PUT HTTP request update thread by admin
     Then I receive valid HTTP response code 200
     And I receive valid data for response code 200
-  @T44
+  @T48
   #Update Thread By Admin -
   Scenario: PUT As an admin I can't update thread
-    Given I set PUT api endpoints update thread invalid
-    When I send PUT HTTP request update thread invalid
-    Then I receive valid HTTP response code 500
-    And I receive valid data for response code 500
+    Given I set PUT api endpoints update thread by admin
+    When I send PUT HTTP request update thread invalid by admin
+    Then I receive valid HTTP response code 400
+    And I receive valid data for response code 400
 
-  @T45
+  @T49
   #Delete Thread By Admin -
   Scenario: DELETE As an user I can delete thread
     Given I set DELETE api endpoints delete thread by admin
     When I send DELETE HTTP request delete thread by admin
     Then I receive valid HTTP response code 200
     And I receive valid data for response code 200
-  @T46
+  @T50
   #Delete Thread By Admin -
   Scenario: DELETE As an user I can't delete thread
     Given I set DELETE api endpoints delete thread invalid

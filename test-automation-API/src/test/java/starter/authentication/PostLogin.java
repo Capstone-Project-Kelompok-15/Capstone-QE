@@ -1,10 +1,15 @@
 package starter.authentication;
 
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import org.hamcrest.Matchers;
 import org.json.simple.JSONObject;
+import org.junit.Assert;
 import starter.BaseUrl;
+import starter.Data;
+
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -46,11 +51,12 @@ public class PostLogin {
     public String setPostApiEndpointUser() {
         return BaseUrl.url + "login";
     }
+
     @Step("I send POST HTTP request login user")
     public void sendPostHTTPRequestLoginUser() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("email", "nafal@gmail.com");
-        requestBody.put("password", "nafal123");
+        requestBody.put("email", Data.email);
+        requestBody.put("password", "password");
         SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
                 .post(setPostApiEndpointUser());
     }
